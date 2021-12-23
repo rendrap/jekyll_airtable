@@ -1,13 +1,4 @@
 ---
-hero_area:
-  enable: true
-  title: "Creative, Smart and Awesome"
-  sub_title: "Branding agency that believes in the power of creative ideas."
-  slider_image: "/assets/images/art/mockup2.png"
-  shape_image: "/assets/images/dummy.png"
-  button_text: "See Our Projects"
-  button_url: "#"
-  
 services_area:
   enable: true
   title: "OUR SERVICES"
@@ -39,107 +30,6 @@ title: Demo site
 layout : default
 ---
 {% include header.html extra_class="absolute transparent" logo_class="logo" %}
-{% if page.hero_area.enable %}
-<div class="wrapper white-wrapper">
-  <div class="rev_slider_wrapper fullscreen-container">
-    <div id="slider7" class="rev_slider fullscreenbanner" data-version="5.4.7">
-      <ul>
-        <li data-transition="fade" data-thumb="{{page.hero_area.title}}">
-          {% if page.hero_area.shape_image %}
-           <img src="{{page.hero_area.shape_image}}" data-bgcolor="#fff" alt="{{page.hero_area.title}}"/>
-          {% endif %}
-          <div class="tp-caption tp-rotate bg-opacity-default tp-shape tp-shapewrapper" 
-               data-x="['center','center','center','center']" 
-               data-y="['middle','middle','middle','middle']" 
-               data-hoffset="['0','0','0','0']" 
-               data-voffset="['0','0','0','0']"
-	           data-visibility="['on','on','on','off']"
-               data-width="3000" 
-               data-height="900" 
-               data-whitespace="nowrap" 
-               data-type="shape" 
-               data-basealign="slide" 
-               data-responsive_offset="off" 
-               data-responsive="off" 
-               data-frames='[{"from":"opacity:0;","speed":2000,"to":"o:1;","delay":0,"ease":"Power2.easeInOut"},{"delay":"wait","speed":500,"to":"opacity:0;","ease":"nothing"}]' style="z-index: 5;">
-          </div>
-		  <!-- /.tp-caption -->
-		  {% if page.hero_area.slider_image %}
-          <div class="tp-caption" 
-               data-x="left" 
-               data-y="middle" 
-               data-hoffset="['420','380','310','310']" 
-               data-voffset="'20','20','-10','-10']" 
-               data-frames='[{"delay":0,"speed":2000,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
-               data-visibility="['on','on','on','off']" 
-               data-width="none" 
-               data-height="none" 
-               data-type="image" 
-               data-responsive_offset="on" style="z-index: 5;"><img 
-               data-lazyload="" src="{{page.hero_area.slider_image}}" 
-               data-ww="['750','550','550','550']" 
-               data-hh="auto" alt="{{page.hero_area.title}}" />
-          </div>
-		  <!-- /.tp-caption -->
-		  {% endif %}
-		  {% if page.hero_area.title %}
-          <div class="tp-caption font-weight-600 color-dark" 
-               data-x="['left','left','left','left']" 
-               data-y="middle" 
-               data-hoffset="['50','50','30','30']" 
-               data-voffset="['-80','-80','-80','-50']" 
-               data-fontsize="['40','40','38','38']" 
-               data-lineheight="['50','50','48','48']" 
-               data-width="['350','350','330','330']" 
-               data-textAlign="['left','left','left','left']" 
-               data-whitespace="['normal','normal','normal','normal']" 
-               data-frames='[{"delay":1000,"speed":1200,"frame":"0","from":"y:-50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]' 
-               data-responsive="on" 
-               data-responsive_offset="on" style="z-index: 9;"> {{page.hero_area.title}}
-          </div>
-          {% endif %}
-		  <!-- /.tp-caption -->
-		  {% if page.hero_area.sub_title %}
-          <div class="tp-caption font-weight-400 color-dark" 
-               data-x="['left','left','left','left']" 
-               data-y="middle" 
-               data-hoffset="['50','50','30','30']"  
-               data-voffset="['30','30','30','60']" 
-               data-fontsize="['26','26','24','24']" 
-               data-lineheight="['36','36','34','34']" 
-               data-width="['350','350','330','330']" 
-               data-textAlign="['left','left','left','left']" 
-               data-whitespace="['normal','normal','normal','normal']" 
-               data-frames='[{"delay":1500,"speed":1200,"frame":"0","from":"x:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"x:50px;opacity:0;","ease":"Power3.easeInOut"}]' 
-               data-responsive="on" 
-               data-responsive_offset="on" style="z-index: 9;">{{page.hero_area.sub_title}}
-          </div>
-		  <!-- /.tp-caption -->
-		  {% endif %}
-		  {% if page.hero_area.button_text %}
-          <a class="tp-caption btn btn-l btn-default scroll" 
-               data-x="['left','left','left','left']" 
-               data-y="middle" 
-               data-hoffset="['50','50','30','30']" 
-               data-voffset="['125','125','125','155']" 
-               data-width="['auto','auto','auto','auto']" 
-               data-textAlign="['left','left','left','left']" 
-               data-frames='[{"delay":2000,"speed":1200,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' 
-               data-responsive="on" 
-               data-responsive_offset="on" style="z-index: 9;" href="{{page.hero_area.button_url}}"> {{page.hero_area.button_text}}
-          </a>
-		  <!-- /.tp-caption -->
-		  {% endif %}
-        </li>
-      </ul>
-      <div class="tp-bannertimer tp-bottom"></div>
-    </div>
-    <!-- /.rev_slider -->
-  </div>
-  <!-- /.rev_slider_wrapper -->
-</div>
-<!-- /.wrapper -->
-{% endif %}
 
 {% if page.services_area.enable %}
 <div class="wrapper white-wrapper">
@@ -154,79 +44,45 @@ layout : default
     </div>	
     {% endif %}
     {% if page.services_area.enable %}
-    <div class="row gutter-60 text-center align-items-end">
-      {% for service in  page.services_area.services  %}
-      <div class="col-md-4">
-      	{% if service.image %}
-        <div class="img-blob blob8 mb-30">
-        	<img src="{{service.image}}" style="width: 30rem" alt="{{service.title}}"/>
+    <div id="target" class="row gutter-60 text-center align-items-end">
+      
+      {% comment %}
+
+        {% for service in  page.services_area.services  %}
+        <div class="col-md-4">
+          {% if service.image %}
+          <div class="img-blob blob8 mb-30">
+            <img src="{{service.image}}" style="width: 30rem" alt="{{service.title}}"/>
+          </div>
+          {% endif %}
+          <h4>{{service.title}}</h4>
+          <p class="mb-15">{{service.description}}</p>
+          {% if service.button_text %}
+          <div class="text-center"><a href="{{service.button_url}}" class="more">{{service.button_text}}</a></div>
+          {% endif %}
         </div>
-        {% endif %}
-        <h4>{{service.title}}</h4>
-        <p class="mb-15">{{service.description}}</p>
-        {% if service.button_text %}
-         <div class="text-center"><a href="{{service.button_url}}" class="more">{{service.button_text}}</a></div>
-        {% endif %}
-      </div>
-      {% endfor %}
+        {% endfor %}
+
+      {% endcomment %}
+
     </div>
     <!--/.row -->
-    {% endif %}
-    {% if page.process_area.enable %}
-    <div class="row">
-    	<div class="col-md-7 mx-auto">
-		    <div class="space160"></div>
-		    <h2 class="title-color color-gray text-center">{{page.process_area.title}}</h2>
-		    <h3 class="display-3 text-center">{{page.process_area.sub_title}}</h3>
-		    <div class="space40"></div>
-    	</div>
-    </div>
-    <div class="row align-items-center">
-      {% if page.process_area.image %}
-      <div class="col-lg-8">
-        <figure>
-          <img src="{{page.process_area.image}}" alt="{{page.process_area.title}}"/>
-        </figure>
-      </div>
-      {% endif %}
-      <div class="space20 d-md-none"></div>
-      <div class="space50 d-none d-md-block d-lg-none"></div>
-      <div class="col-lg-4 pl-50 pr-lg-0 pl-md-0">
-      	{% for list in page.process_area.lists %}
-        <div class="d-flex flex-row justify-content-center">
-          <div>
-            <span class="icon icon-bg icon-bg-default color-default mr-25">
-            	<span class="number">{{forloop.index}}</span>
-            </span>
-          </div>
-          <div>
-            <h5>{{list.title}}</h5>
-            <p class="mb-0">
-            	{{list.description}}
-            </p>
-          </div>
-        </div>
-        <div class="space40"></div>
-        {% endfor %}
-      </div>
-    </div>
     {% endif %}
   </div>
 </div>
 <!-- /.wrapper -->
 {% endif %}
 
-<h1>Test page</h1>
-<div id='content'></div>
+<!-- <div id='target'></div> -->
 <script>
   var Airtable = require('airtable');
   var base = new Airtable({ apiKey: 'keyseIoCRcu2Bd157' }).base('appNFHQ99gllMSqiE');
 
-  let target = document.getElementById('content');
+  let target = document.getElementById('target');
   let textContent = document.createDocumentFragment();
 
   base('Service').select({ // Selecting the first 3 records in Grid view:
-    maxRecords: 100,
+    // maxRecords: 100,
     view: "Grid view"
   }).eachPage(function page(records, fetchNextPage) { // This function (`page`) will get called for each page of records.
 
@@ -235,17 +91,35 @@ layout : default
 
       let title = document.createElement('h4');
       let text = document.createElement('p');
+      text.classList.add("mb-15");
       let container = document.createElement('div');
-
-      title.innerHTML = record.get('Name');
-      text.innerHTML = record.get('Text');
 
       container.appendChild(title);
       container.appendChild(text);
       textContent.appendChild(container);
 
+
+      title = record.get('Name');
+      text = record.get('Text');
+      image = record.get('Image');
+
+      let html = `<div class="col-md-4">`
+      html += `<div class="img-blob blob8 mb-30">
+        	<img src="${image}" style="width: 30rem" "/>
+        </div>
+        <h4>${title}</h4>
+        
+        <p class="mb-15">${text}</p>
+         <div class="text-center"><a href="#" class="more">Learn More</a></div>
+        `
+     
+
+      html += `</div>`;
+      
     });
-    target.appendChild(textContent);
+    console.log(`html`, html)
+    document.getElementById("target").innerHTML = html;
+    // target.appendChild(html);
 
 
     // To fetch the next page of records, call `fetchNextPage`.
