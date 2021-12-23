@@ -3,15 +3,15 @@
   <div
     class="{% if include.container_class %} {{include.container_class}} {% else %} container-fluid {% endif %} flex-row justify-content-center">
     <div class="navbar-brand">
-      <a href="{{site.url}}">
+    <a href="{{ "/" | relative_url }}">
         {% if include.light_logo %}
-        <img src="{{site.data.general_settings.light_logo_1x}}"
-          srcset="{{site.data.general_settings.light_logo_1x}} 1x, {{site.data.general_settings.light_logo_2x}} 2x"
+      <img src="{{ site.data.general_settings.light_logo_1x | relative_url }}"
+          srcset="{{site.data.general_settings.light_logo_1x | relative_url }} 1x, {{site.data.general_settings.light_logo_2x | relative_url }} 2x"
           class="{% if include.logo_class %} {{include.logo_class}} {% else %} logo-light {% endif %}"
           alt="{{site.data.general_settings.title}}" />
         {% endif %}
-        <img src="{{site.data.general_settings.black_logo_1x}}"
-          srcset="{{site.data.general_settings.black_logo_1x}} 1x, {{site.data.general_settings.black_logo_2x}} 2x"
+        <img src="{{site.data.general_settings.black_logo_1x | relative_url }}"
+          srcset="{{site.data.general_settings.black_logo_1x | relative_url }} 1x, {{ site.data.general_settings.black_logo_2x | relative_url }} 2x"
           class="{% if include.logo_class %} {{include.logo_class}} {% else %} logo-dark {% endif %} {% if include.black_logo_disable %} d-none {% endif %}"
           alt="{{site.data.general_settings.title}}" />
       </a>
@@ -49,9 +49,9 @@
     <!-- /.navbar-other -->
     <div class="navbar-collapse offcanvas-nav">
       <div class="offcanvas-header d-lg-none d-xl-none">
-        <a href="{{site.url}}">
-          <img src="{{site.data.general_settings.light_logo_1x}}"
-            srcset="{{site.data.general_settings.light_logo_1x}} 1x, {{site.data.general_settings.light_logo_2x}} 2x"
+        <a href="{{"/" | relative_url }}">
+          <img src="{{site.data.general_settings.light_logo_1x | relative_url }}"
+            srcset="{{site.data.general_settings.light_logo_1x | relative_url }} 1x, {{site.data.general_settings.light_logo_2x | relative_url }} 2x"
             alt="{{site.data.general_settings.title}}" /></a>
         <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
       </div>
@@ -132,9 +132,9 @@
 <!-- /.navbar -->
 <div class="offcanvas-info inverse-text">
   <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
-  <a href="{{site.url}}">
-    <img src="{{site.data.general_settings.light_logo_1x}}"
-      srcset="{{site.data.general_settings.light_logo_1x}} 1x, {{site.data.general_settings.light_logo_2x}} 2x"
+<a href="{{"/" | relarive_url }}">
+    <img src="{{site.data.general_settings.light_logo_1x | relative_url }}"
+      srcset="{{site.data.general_settings.light_logo_1x | relative_url }} 1x, {{site.data.general_settings.light_logo_2x | relative_url }} 2x"
       class="{% if include.logo_class %} {{include.logo_class}} {% else %} logo-light {% endif %}"
       alt="{{site.data.general_settings.title}}" />
   </a>

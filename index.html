@@ -60,6 +60,7 @@ layout : default
   var base = new Airtable({ apiKey: 'keyseIoCRcu2Bd157' }).base('appNFHQ99gllMSqiE');
 
   let target = document.getElementById('target');
+  let baseUrl = '{{site.baseurl | remove_first: '/' }}';
   let html = '';
 
   base('Service').select({ // Selecting the first 3 records in Grid view:
@@ -68,20 +69,20 @@ layout : default
   }).eachPage(function page(records, fetchNextPage) { // This function (`page`) will get called for each page of records.
 
     records.map(function (record) {
-      console.log('Retrieved: ', record.get('Name') + ' ' + record.get('Text')+ ' ' + record.get('Image'));
+      // console.log('Retrieved: ', record.get('Name') + ' ' + record.get('Text')+ ' ' + record.get('Image'));
 
       let title = record.get('Name');
       let text = record.get('Text');
       let image = record.get('Image');
 
-      console.log(`title`, title);
-      console.log(`text`, text);
-      console.log(`image`, image);
+      // console.log(`title`, title);
+      // console.log(`text`, text);
+      // console.log(`image`, image);
 
       html += `
       <div class="col-md-4">
         <div class="img-blob blob8 mb-30">
-        	<img src="${image}" style="width: 30rem" "/>
+        	<img src="/${baseUrl}${image}" style="width: 30rem" "/>
         </div>
         <h4>${title}</h4>
         <p class="mb-15">${text}</p>

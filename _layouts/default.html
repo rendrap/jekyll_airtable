@@ -6,27 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="{{relative_url}}/assets/images/favicon.png" />
   <title>{% if page.title %} {{ page.title }} {% else %} {{ site.data.general_settings.title }}{% endif %}</title>
-  <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/css/plugins.css" />
-  <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/revolution/css/settings.css" />
-  <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/revolution/css/layers.css" />
-  <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/revolution/css/navigation.css" />
-  <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/type/type.css" />
-  <link rel="stylesheet" type="text/css" href="{{relative_url}}/assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/bootstrap.min.css" | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/plugins.css" | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/revolution/css/settings.css" | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/revolution/css/layers.css" | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/revolution/css/navigation.css" | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/type/type.css" | relative_url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css" | relative_url }}" />
 
-  <script src="{{relative_url}}/assets/js/airtable.browser.js"></script>
+  <script src="{{ "/assets/js/airtable.browser.js" | relative_url }}"></script>
   
-  <!--page wise css-->
-  {% if page.custom_css -%}
-  {%- for stylesheet in page.custom_css -%}
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/color/{{ stylesheet }}.css">
-  {% endfor %}
-  {%- endif -%}
-  {%- if page.custom_font -%}
-  {% for stylesheet in page.custom_font %}
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/font/{{ stylesheet }}.css">
-  {% endfor %}
-  {% endif %}
   <!--/.page wise css-->
   {% if site.data.general_settings.google_analytics.enable %}
   {% include analytics.html %}
@@ -37,26 +26,26 @@
   <div class="content-wrapper">
     {{ content }}
   </div>
-  <script src="{{relative_url}}/assets/js/jquery.min.js"></script>
-  <script src="{{relative_url}}/assets/js/popper.min.js"></script>
-  <script src="{{relative_url}}/assets/js/bootstrap.min.js"></script>
+  <script src="{{ "/assets/js/jquery.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/popper.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/bootstrap.min.js" | relative_url }}"></script>
 
   
-  <script src="{{relative_url}}/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-  <script src="{{relative_url}}/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+  <script src="{{ "/assets/revolution/js/jquery.themepunch.tools.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/jquery.themepunch.revolution.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.actions.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.carousel.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.kenburn.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.migration.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.navigation.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.parallax.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.slideanims.min.js" | relative_url }}"></script>
+  <script src="{{ "/assets/revolution/js/extensions/revolution.extension.video.min.js" | relative_url }}"></script>
   
-  <script src="{{relative_url}}/assets/js/plugins.js"></script>
-  <script src="{{relative_url}}/assets/js/scripts.js"></script>
-  <script src="{{relative_url}}/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="{{ "/assets/js/plugins.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/scripts.js" | relative_url }}"></script>
+  <script src="{{ "/assets/js/simple-jekyll-search.min.js" | relative_url }}"></script>
 </body>
 
 </html>
