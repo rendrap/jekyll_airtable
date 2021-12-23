@@ -46,25 +46,6 @@ layout : default
     {% if page.services_area.enable %}
     <div id="target" class="row gutter-60 text-center align-items-end">
       
-      {% comment %}
-
-        {% for service in  page.services_area.services  %}
-        <div class="col-md-4">
-          {% if service.image %}
-          <div class="img-blob blob8 mb-30">
-            <img src="{{service.image}}" style="width: 30rem" alt="{{service.title}}"/>
-          </div>
-          {% endif %}
-          <h4>{{service.title}}</h4>
-          <p class="mb-15">{{service.description}}</p>
-          {% if service.button_text %}
-          <div class="text-center"><a href="{{service.button_url}}" class="more">{{service.button_text}}</a></div>
-          {% endif %}
-        </div>
-        {% endfor %}
-
-      {% endcomment %}
-
     </div>
     <!--/.row -->
     {% endif %}
@@ -79,54 +60,44 @@ layout : default
   var base = new Airtable({ apiKey: 'keyseIoCRcu2Bd157' }).base('appNFHQ99gllMSqiE');
 
   let target = document.getElementById('target');
-  let textContent = document.createDocumentFragment();
+  let html = '';
 
   base('Service').select({ // Selecting the first 3 records in Grid view:
-    // maxRecords: 100,
+    maxRecords: 100,
     view: "Grid view"
   }).eachPage(function page(records, fetchNextPage) { // This function (`page`) will get called for each page of records.
 
     records.map(function (record) {
-      console.log('Retrieved: ', record.get('Name') + ' ' + record.get('Text'));
+      console.log('Retrieved: ', record.get('Name') + ' ' + record.get('Text')+ ' ' + record.get('Image'));
 
-      let title = document.createElement('h4');
-      let text = document.createElement('p');
-      text.classList.add("mb-15");
-      let container = document.createElement('div');
+      let title = record.get('Name');
+      let text = record.get('Text');
+      let image = record.get('Image');
 
-      container.appendChild(title);
-      container.appendChild(text);
-      textContent.appendChild(container);
+      console.log(`title`, title);
+      console.log(`text`, text);
+      console.log(`image`, image);
 
-
-      title = record.get('Name');
-      text = record.get('Text');
-      image = record.get('Image');
-
-      let html = `<div class="col-md-4">`
-      html += `<div class="img-blob blob8 mb-30">
+      html += `
+      <div class="col-md-4">
+        <div class="img-blob blob8 mb-30">
         	<img src="${image}" style="width: 30rem" "/>
         </div>
         <h4>${title}</h4>
-        
         <p class="mb-15">${text}</p>
-         <div class="text-center"><a href="#" class="more">Learn More</a></div>
-        `
+        <div class="text-center"><a href="#" class="more">Learn More</a></div>
+      </div>`
      
-
-      html += `</div>`;
-      
     });
-    console.log(`html`, html)
     document.getElementById("target").innerHTML = html;
-    // target.appendChild(html);
-
-
+    // console.log(`html`, html)
+    
+    
     // To fetch the next page of records, call `fetchNextPage`.
     // If there are more records, `page` will get called again.
     // If there are no more records, `done` will get called.
     fetchNextPage();
-
+    
   }, function done(err) {
     if (err) {
       console.error(err);
